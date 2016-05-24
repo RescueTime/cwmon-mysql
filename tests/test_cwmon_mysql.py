@@ -1,12 +1,24 @@
+# -*- encoding: utf-8 -*-
+"""Tests for the monitoring CLI.
 
+.. danger:: You **must** pass the `--dry-run` flag in all tests. Failure to do
+            so will result in flooding AWS CloudWatch with bogus stats.
+"""
 from click.testing import CliRunner
 
-from cwmon_mysql.cli import main
+from cwmon.cli import cwmon
 
 
-def test_main():
+def _run_mysql_metric(name, *args):
     runner = CliRunner()
-    result = runner.invoke(main, [])
+    my_args = ['--dry-run', 'mysql', name]
+    my_args.extend(args)
+    return runner.invoke(cwmon, my_args)
 
-    assert result.output == '()\n'
+
+def test_mysql_registered_correctly():
+    """Test the primary entrypoint of the CLI some more."""
+    result = _run_mysql_metric('--help')
+
+    assert result.output.startswith('Usage')
     assert result.exit_code == 0
