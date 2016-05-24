@@ -65,9 +65,12 @@ setup(
         'click-plugins',
     ],
     extras_require={
-        # eg:
-        #   'rst': ['docutils>=0.11'],
-        #   ':python_version=="2.6"': ['argparse'],
+        'dev': [
+            'twine',
+            'wheel',
+            'bumpversion',
+            'gitchangelog',
+        ],
     },
     entry_points={
         'console_scripts': [
