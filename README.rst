@@ -54,7 +54,9 @@ Overview
 
 .. end-badges
 
-A cwmon plugin for monitoring MySQL.
+A cwmon_ plugin for monitoring MySQL.
+
+.. _cwmon: https://github.com/RescueTime/cwmon
 
 * Free software: BSD license
 
