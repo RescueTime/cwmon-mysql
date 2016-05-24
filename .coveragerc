@@ -1,0 +1,16 @@
+[paths]
+source =
+   src/cwmon_mysql
+   */site-packages/cwmon_mysql
+
+[run]
+branch = True
+source =
+    cwmon_mysql
+    tests
+parallel = true
+
+[report]
+show_missing = true
+precision = 2
+omit = *migrations*
