@@ -74,9 +74,8 @@ setup(
             'gitchangelog',
         ],
     },
-    entry_points={
-        'console_scripts': [
-            'cwmon-mysql = cwmon_mysql.cli:main',
-        ]
-    },
+    entry_points='''
+        [cwmon.plugins]
+        mysql=cwmon_mysql.cli:mysql
+    '''
 )
