@@ -33,7 +33,7 @@ setup(
     ),
     author='Hank Gay',
     author_email='hank@rescuetime.com',
-    url='https://github.com/gthank/cwmon-mysql',
+    url='https://github.com/RescueTime/cwmon-mysql',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],

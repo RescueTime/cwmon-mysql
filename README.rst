@@ -19,17 +19,17 @@ Overview
     :target: https://readthedocs.org/projects/cwmon-mysql
     :alt: Documentation Status
 
-.. |travis| image:: https://travis-ci.org/gthank/cwmon-mysql.svg?branch=master
+.. |travis| image:: https://travis-ci.org/RescueTime/cwmon-mysql.svg?branch=master
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/gthank/cwmon-mysql
+    :target: https://travis-ci.org/RescueTime/cwmon-mysql
 
-.. |requires| image:: https://requires.io/github/gthank/cwmon-mysql/requirements.svg?branch=master
+.. |requires| image:: https://requires.io/github/RescueTime/cwmon-mysql/requirements.svg?branch=master
     :alt: Requirements Status
-    :target: https://requires.io/github/gthank/cwmon-mysql/requirements/?branch=master
+    :target: https://requires.io/github/RescueTime/cwmon-mysql/requirements/?branch=master
 
-.. |coveralls| image:: https://coveralls.io/repos/gthank/cwmon-mysql/badge.svg?branch=master&service=github
+.. |coveralls| image:: https://coveralls.io/repos/RescueTime/cwmon-mysql/badge.svg?branch=master&service=github
     :alt: Coverage Status
-    :target: https://coveralls.io/r/gthank/cwmon-mysql
+    :target: https://coveralls.io/r/RescueTime/cwmon-mysql
 
 .. |version| image:: https://img.shields.io/pypi/v/cwmon-mysql.svg?style=flat
     :alt: PyPI Package latest release
