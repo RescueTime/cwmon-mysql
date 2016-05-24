@@ -62,6 +62,7 @@ setup(
     ],
     install_requires=[
         'click',
+        'click-plugins',
     ],
     extras_require={
         # eg:
