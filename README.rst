@@ -27,9 +27,9 @@ Overview
     :alt: Requirements Status
     :target: https://requires.io/github/RescueTime/cwmon-mysql/requirements/?branch=develop
 
-.. |coveralls| image:: https://coveralls.io/repos/github/RescueTime/cwmon-mysql/badge.svg?branch=develop :target: https://coveralls.io/github/RescueTime/cwmon-mysql?branch=develop
+.. |coveralls| image:: https://coveralls.io/repos/github/RescueTime/cwmon-mysql/badge.svg?branch=develop
+    :target: https://coveralls.io/github/RescueTime/cwmon-mysql?branch=develop
     :alt: Coverage Status
-    :target: https://coveralls.io/github/RescueTime/cwmon-mysql
 
 .. |version| image:: https://img.shields.io/pypi/v/cwmon-mysql.svg?style=flat
     :alt: PyPI Package latest release
