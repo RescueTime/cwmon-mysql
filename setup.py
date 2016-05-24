@@ -55,7 +55,10 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        # eg: 'keyword1', 'keyword2', 'keyword3',
+        'monitoring',
+        'AWS',
+        'CloudWatch',
+        'MySQL',
     ],
     install_requires=[
         'click',
