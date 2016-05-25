@@ -15,10 +15,9 @@ Why does this file exist, and why not put this in __main__?
   Also see (1) from http://click.pocoo.org/5/setuptools/#setuptools-integration
 """
 import click
-from cwmon.cli import cwmon
 
 
-@cwmon.group()
+@click.group()
 @click.pass_context
 def mysql(ctx):
     """Group MySQL monitoring commands for ``cwmon``."""
