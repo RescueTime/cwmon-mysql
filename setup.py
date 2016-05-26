@@ -62,7 +62,6 @@ setup(
     ],
     install_requires=[
         'click',
-        'click-plugins',
         'cwmon',
     ],
     extras_require={
