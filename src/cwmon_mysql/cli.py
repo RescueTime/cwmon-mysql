@@ -36,3 +36,11 @@ def mysql(ctx, host, user, passwd, db, port):
         'db': db,
         'port': port,
     }
+
+
+@mysql.command()
+@click.pass_obj
+def echo(obj):
+    """Echo out the info in ``obj`` (for debugging purposes)."""
+    click.echo(obj.dry_run)
+    click.echo(obj.conn_properties)
