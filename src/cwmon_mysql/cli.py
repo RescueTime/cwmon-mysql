@@ -15,6 +15,7 @@ Why does this file exist, and why not put this in __main__?
   Also see (1) from http://click.pocoo.org/5/setuptools/#setuptools-integration
 """
 import click
+import oursql
 
 
 @click.group()
@@ -29,13 +30,13 @@ import click
 @click.pass_context
 def mysql(ctx, host, user, passwd, db, port):
     """Group MySQL monitoring commands for ``cwmon``."""
-    ctx.obj.conn_properties = {
-        'host': host,
-        'user': user,
-        'passwd': passwd,
-        'db': db,
-        'port': port,
-    }
+    ctx.obj.conn = oursql.connect(
+        host=host,
+        user=user,
+        passwd=passwd,
+        db=db,
+        port=port
+    )
 
 
 @mysql.command()
@@ -43,4 +44,4 @@ def mysql(ctx, host, user, passwd, db, port):
 def echo(obj):
     """Echo out the info in ``obj`` (for debugging purposes)."""
     click.echo(obj.dry_run)
-    click.echo(obj.conn_properties)
+    click.echo(obj.conn)
