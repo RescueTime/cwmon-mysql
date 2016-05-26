@@ -18,7 +18,21 @@ import click
 
 
 @click.group()
+@click.option('--host', default='127.0.0.1',
+              help='The hostname where we can reach the DB.')
+@click.option('--user', default='habnabit', help='The DB username')
+@click.option('--passwd', default='foobar', help='The DB passwd')
+@click.option('--db', default='example',
+              help='The name of the specific DB to connect to')
+@click.option('--port', default=3307,
+              help='The port to use when connecting to the DB.')
 @click.pass_context
-def mysql(ctx):
+def mysql(ctx, host, user, passwd, db, port):
     """Group MySQL monitoring commands for ``cwmon``."""
-    click.echo(repr(ctx))
+    ctx.obj.conn_properties = {
+        'host': host,
+        'user': user,
+        'passwd': passwd,
+        'db': db,
+        'port': port,
+    }
