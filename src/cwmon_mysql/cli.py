@@ -30,13 +30,16 @@ import oursql
 @click.pass_context
 def mysql(ctx, host, user, passwd, db, port):
     """Group MySQL monitoring commands for ``cwmon``."""
-    ctx.obj.conn = oursql.connect(
-        host=host,
-        user=user,
-        passwd=passwd,
-        db=db,
-        port=port
-    )
+    if not ctx.obj.dry_run:
+        ctx.obj.conn = oursql.connect(
+            host=host,
+            user=user,
+            passwd=passwd,
+            db=db,
+            port=port
+        )
+    else:
+        ctx.obj.conn = None
 
 
 @mysql.command()
