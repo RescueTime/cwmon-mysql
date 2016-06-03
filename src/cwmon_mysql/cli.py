@@ -40,6 +40,7 @@ def mysql(ctx, host, user, passwd, db, port):
             port=port,
             cursorclass=pymysql.cursors.DictCursor
         )
+        ctx.call_on_close(ctx.obj.conn.close)
     else:
         ctx.obj.conn = None
 
