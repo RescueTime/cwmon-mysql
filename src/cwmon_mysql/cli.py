@@ -17,7 +17,7 @@ Why does this file exist, and why not put this in __main__?
 import click
 import pymysql
 import pymysql.cursors
-from cwmon-mysql.metrics import DeadlocksMetric
+from cwmon_mysql.metrics import DeadlocksMetric
 
 
 @click.group()
