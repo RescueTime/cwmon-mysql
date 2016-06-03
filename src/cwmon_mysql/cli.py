@@ -17,6 +17,7 @@ Why does this file exist, and why not put this in __main__?
 import click
 import pymysql
 import pymysql.cursors
+from cwmon-mysql.metrics import DeadlocksMetric
 
 
 @click.group()
@@ -51,3 +52,14 @@ def echo(obj):
     """Echo out the info in ``obj`` (for debugging purposes)."""
     click.echo(obj.dry_run)
     click.echo(obj.conn)
+
+
+@mysql.command()
+@click.pass_obj
+def deadlocks(obj):
+    """Detect deadlocks in the MySQL DB being monitored."""
+    m = DeadlocksMetric(obj.conn)
+    if options.dry_run:
+        click.echo(str(m))
+    else:
+        m.put()
