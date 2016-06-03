@@ -32,18 +32,15 @@ from cwmon_mysql.metrics import DeadlocksMetric
 @click.pass_context
 def mysql(ctx, host, user, passwd, db, port):
     """Group MySQL monitoring commands for ``cwmon``."""
-    if not ctx.obj.dry_run:
-        ctx.obj.conn = pymysql.connect(
-            host=host,
-            user=user,
-            password=passwd,
-            db=db,
-            port=port,
-            cursorclass=pymysql.cursors.DictCursor
-        )
-        ctx.call_on_close(ctx.obj.conn.close)
-    else:
-        ctx.obj.conn = None
+    ctx.obj.conn = pymysql.connect(
+        host=host,
+        user=user,
+        password=passwd,
+        db=db,
+        port=port,
+        cursorclass=pymysql.cursors.DictCursor
+    )
+    ctx.call_on_close(ctx.obj.conn.close)
 
 
 @mysql.command()
