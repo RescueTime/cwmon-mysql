@@ -63,7 +63,7 @@ setup(
     install_requires=[
         'click',
         'cwmon',
-        'oursql3',
+        'pymysql',
     ],
     extras_require={
         'dev': [

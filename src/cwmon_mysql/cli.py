@@ -15,7 +15,8 @@ Why does this file exist, and why not put this in __main__?
   Also see (1) from http://click.pocoo.org/5/setuptools/#setuptools-integration
 """
 import click
-import oursql
+import pymysql
+import pymysql.cursors
 
 
 @click.group()
@@ -31,12 +32,13 @@ import oursql
 def mysql(ctx, host, user, passwd, db, port):
     """Group MySQL monitoring commands for ``cwmon``."""
     if not ctx.obj.dry_run:
-        ctx.obj.conn = oursql.connect(
+        ctx.obj.conn = pymysql.connect(
             host=host,
             user=user,
-            passwd=passwd,
+            password=passwd,
             db=db,
-            port=port
+            port=port,
+            cursorclass=pymysql.cursors.DictCursor
         )
     else:
         ctx.obj.conn = None
