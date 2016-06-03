@@ -20,7 +20,7 @@ def _run_mysql_metric(name, *args):
 
 def test_mysql_registered_correctly():
     """Test the primary entrypoint of the CLI some more."""
-    result = _run_mysql_metric('--help')
+    result = _run_mysql_metric('')
 
     assert result.output.startswith('Usage')
     assert result.exit_code == 0
