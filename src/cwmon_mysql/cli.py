@@ -53,9 +53,9 @@ def echo(obj):
 
 @mysql.command()
 @click.pass_obj
-def deadlocks(obj):
+def deadlocks(options):
     """Detect deadlocks in the MySQL DB being monitored."""
-    m = DeadlocksMetric(obj.conn)
+    m = DeadlocksMetric(options.conn)
     if options.dry_run:
         click.echo(str(m))
     else:
