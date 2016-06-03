@@ -52,14 +52,6 @@ def mysql(ctx, host, user, passwd, db, port):
 
 @mysql.command()
 @click.pass_obj
-def echo(obj):
-    """Echo out the info in ``obj`` (for debugging purposes)."""
-    click.echo(obj.dry_run)
-    click.echo(obj.conn)
-
-
-@mysql.command()
-@click.pass_obj
 def deadlocks(options):
     """Detect deadlocks in the MySQL DB being monitored."""
     m = DeadlocksMetric(options.conn)
