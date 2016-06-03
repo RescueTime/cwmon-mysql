@@ -24,3 +24,9 @@ def test_mysql_registered_correctly():
 
     assert result.output.startswith('Usage')
     assert result.exit_code == 0
+
+
+def test_deadlocks():
+    """Test the happy path for deadlock detection."""
+    result = _run_mysql_metric('deadlocks')
+    assert result.exit_code == 0
