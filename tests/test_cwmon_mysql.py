@@ -11,7 +11,9 @@ from cwmon.cli import cwmon
 
 def _run_mysql_metric(name, *args):
     runner = CliRunner()
-    my_args = ['--dry-run', 'mysql', name]
+    my_args = ['--dry-run', 'mysql']
+    if name:
+        my_args.append(name)
     my_args.extend(args)
     return runner.invoke(cwmon, my_args)
 
