@@ -24,16 +24,16 @@ from cwmon_mysql.metrics import DeadlocksMetric
 @click.option('--host', default='127.0.0.1',
               envvar='MYSQL_HOST',
               help='The hostname where we can reach the DB.')
-@click.option('--user', default='habnabit',
+@click.option('--user', default='root',
               envvar='MYSQL_USER',
               help='The DB username')
-@click.option('--passwd', default='foobar',
+@click.option('--passwd', default='',
               envvar='MYSQL_PASSWD',
               help='The DB passwd')
-@click.option('--db', default='example',
+@click.option('--db', default='',
               envvar='MYSQL_DB',
               help='The name of the specific DB to connect to')
-@click.option('--port', default=3307,
+@click.option('--port', default=3306,
               envvar='MYSQL_PORT',
               help='The port to use when connecting to the DB.')
 @click.pass_context
