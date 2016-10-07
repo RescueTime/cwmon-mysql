@@ -4,7 +4,12 @@ from cwmon.metrics import Metric
 
 
 class DeadlocksMetric(Metric):
-    """A :class:`~cwmon.metrics.Metric` for current INNODB deadlocks."""
+    """A :class:`~cwmon.metrics.Metric` for current INNODB deadlocks.
+
+    .. note:: This only works on Percona Toolkit servers due to its
+              reliance on a global status variable (``Innodb_deadlocks``)
+              that is not defined for other variants of MySQL.
+    """
 
     def __init__(self, conn):
         """Create a new ``Metric`` for the current number of deadlocks.
@@ -20,5 +25,9 @@ class DeadlocksMetric(Metric):
     def _capture(self):
         with self.conn.cursor() as c:
             c.execute("SHOW GLOBAL STATUS LIKE 'innodb_deadlocks'")
-            self.value = c.fetchone()['Value']
-            self.unit = 'Innodb_deadlocks'
+            result = c.fetchone()
+        if result is not None:
+            self.value = result['Value']
+        else:
+            self.value = None
+        self.unit = 'Innodb deadlocks'
