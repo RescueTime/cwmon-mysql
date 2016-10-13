@@ -1,8 +1,15 @@
 Changelog
 =========
 
-%%version%% (unreleased)
-------------------------
+0.2.1 (2016-10-13)
+------------------
+
+- Bump version: 0.2.0 → 0.2.1. [Hank Gay]
+
+- Merge branch 'release/0.2.0' into develop. [Hank Gay]
+
+0.2.0 (2016-10-13)
+------------------
 
 New
 ~~~
@@ -58,6 +65,10 @@ Fix
 
 Other
 ~~~~~
+
+- Merge branch 'release/0.2.0' [Hank Gay]
+
+- Update changelog. [Hank Gay]
 
 - Bump version: 0.1.0 → 0.2.0. [Hank Gay]
 
