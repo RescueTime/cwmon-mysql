@@ -204,6 +204,6 @@ class SecondsBehindMasterMetric(Metric):
         super().__init__('Seconds Behind Master')
 
     def _capture(self):
-        status_info = _MysqlStatus(self.conn)
+        status_info = _MysqlSlaveStatus(self.conn)
         self.value = status_info.seconds_behind_master
         self.unit = 'Seconds'
