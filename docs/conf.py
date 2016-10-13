@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 import os
 
 
@@ -26,13 +24,13 @@ project = 'cwmon-mysql'
 year = '2016'
 author = 'Hank Gay'
 copyright = '{0}, {1}'.format(year, author)
-version = release = '0.1.0'
+version = release = '0.2.0'
 
 pygments_style = 'trac'
 templates_path = ['.']
 extlinks = {
-    'issue': ('https://github.com/gthank/cwmon-mysql/issues/%s', '#'),
-    'pr': ('https://github.com/gthank/cwmon-mysql/pull/%s', 'PR #'),
+    'issue': ('https://github.com/RescueTime/cwmon-mysql/issues/%s', '#'),
+    'pr': ('https://github.com/RescueTime/cwmon-mysql/pull/%s', 'PR #'),
 }
 # on_rtd is whether we are on readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'

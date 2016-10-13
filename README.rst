@@ -19,17 +19,17 @@ Overview
     :target: https://readthedocs.org/projects/cwmon-mysql
     :alt: Documentation Status
 
-.. |travis| image:: https://travis-ci.org/gthank/cwmon-mysql.svg?branch=master
+.. |travis| image:: https://travis-ci.org/RescueTime/cwmon-mysql.svg?branch=develop
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/gthank/cwmon-mysql
+    :target: https://travis-ci.org/RescueTime/cwmon-mysql
 
-.. |requires| image:: https://requires.io/github/gthank/cwmon-mysql/requirements.svg?branch=master
+.. |requires| image:: https://requires.io/github/RescueTime/cwmon-mysql/requirements.svg?branch=develop
     :alt: Requirements Status
-    :target: https://requires.io/github/gthank/cwmon-mysql/requirements/?branch=master
+    :target: https://requires.io/github/RescueTime/cwmon-mysql/requirements/?branch=develop
 
-.. |coveralls| image:: https://coveralls.io/repos/gthank/cwmon-mysql/badge.svg?branch=master&service=github
+.. |coveralls| image:: https://coveralls.io/repos/github/RescueTime/cwmon-mysql/badge.svg?branch=develop
+    :target: https://coveralls.io/github/RescueTime/cwmon-mysql?branch=develop
     :alt: Coverage Status
-    :target: https://coveralls.io/r/gthank/cwmon-mysql
 
 .. |version| image:: https://img.shields.io/pypi/v/cwmon-mysql.svg?style=flat
     :alt: PyPI Package latest release
@@ -54,7 +54,9 @@ Overview
 
 .. end-badges
 
-A cwmon plugin for monitoring MySQL.
+A cwmon_ plugin for monitoring MySQL.
+
+.. _cwmon: https://github.com/RescueTime/cwmon
 
 * Free software: BSD license
 

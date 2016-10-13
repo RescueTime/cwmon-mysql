@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import print_function
-
+"""It's the ``setup.py``; you know the drill."""
 import io
 import re
 from glob import glob
@@ -16,6 +14,7 @@ from setuptools import setup
 
 
 def read(*names, **kwargs):
+    """Read and return the contents of a file."""
     return io.open(
         join(dirname(__file__), *names),
         encoding=kwargs.get('encoding', 'utf8')
@@ -24,7 +23,7 @@ def read(*names, **kwargs):
 
 setup(
     name='cwmon-mysql',
-    version='0.1.0',
+    version='0.2.0',
     license='BSD',
     description='A cwmon plugin for monitoring MySQL.',
     long_description='%s\n%s' % (
@@ -33,7 +32,7 @@ setup(
     ),
     author='Hank Gay',
     author_email='hank@rescuetime.com',
-    url='https://github.com/gthank/cwmon-mysql',
+    url='https://github.com/RescueTime/cwmon-mysql',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
@@ -48,33 +47,36 @@ setup(
         'Operating System :: POSIX',
         'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy',
-        # uncomment if you test on these interpreters:
-        # 'Programming Language :: Python :: Implementation :: IronPython',
-        # 'Programming Language :: Python :: Implementation :: Jython',
-        # 'Programming Language :: Python :: Implementation :: Stackless',
         'Topic :: Utilities',
     ],
     keywords=[
-        # eg: 'keyword1', 'keyword2', 'keyword3',
+        'monitoring',
+        'AWS',
+        'CloudWatch',
+        'MySQL',
     ],
     install_requires=[
         'click',
+        'cwmon',
+        'pymysql',
     ],
     extras_require={
-        # eg:
-        #   'rst': ['docutils>=0.11'],
-        #   ':python_version=="2.6"': ['argparse'],
+        'dev': [
+            'tox',
+            'detox',
+            'twine',
+            'wheel',
+            'bumpversion',
+            'gitchangelog',
+        ],
     },
-    entry_points={
-        'console_scripts': [
-            'cwmon-mysql = cwmon_mysql.cli:main',
-        ]
-    },
+    entry_points='''
+        [cwmon.plugins]
+        mysql=cwmon_mysql.cli:mysql
+    '''
 )
