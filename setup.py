@@ -62,7 +62,7 @@ setup(
     ],
     install_requires=[
         'click',
-        'cwmon',
+        'cwmon >= 0.2.0',
         'pymysql',
     ],
     extras_require={
