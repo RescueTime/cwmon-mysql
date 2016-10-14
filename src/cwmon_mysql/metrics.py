@@ -37,12 +37,12 @@ class _MysqlSlaveStatus():
 
         if query_results:
             self.seconds_behind_master = _int_me(query_results['Seconds_Behind_Master'])
-            self.slave_io_running = query_results['Slave_IO_Running'] == 'Yes'
-            self.slave_sql_running = query_results['Slave_SQL_Running'] == 'Yes'
+            self.slave_io_running = _int_me(query_results['Slave_IO_Running'] == 'Yes')
+            self.slave_sql_running = _int_me(query_results['Slave_SQL_Running'] == 'Yes')
         else:
             self.seconds_behind_master = None
-            self.slave_io_running = 'No'
-            self.slave_sql_running = 'No'
+            self.slave_io_running = 0
+            self.slave_sql_running = 0
 
 
 class DeadlocksMetric(Metric):
