@@ -3,6 +3,12 @@
 from cwmon.metrics import Metric
 
 
+def _int_me(to_int):
+    if to_int is None:
+        return None
+    return int(to_int)
+
+
 class _MysqlStatus():
     """Clean interface to ``SHOW STATUS`` info we want to report on."""
 
@@ -13,12 +19,12 @@ class _MysqlStatus():
         status_dict = dict(
             ((r['Variable_name'], r['Value']) for r in query_results)
         )
-        self.uptime = status_dict['Uptime']
-        self.running_threads = status_dict['Threads_running']
-        self.questions = status_dict['Questions']
-        self.slow_queries = status_dict['Slow_queries']
-        self.open_files = status_dict['Open_files']
-        self.open_tables = status_dict['Open_tables']
+        self.uptime = _int_me(status_dict['Uptime'])
+        self.running_threads = _int_me(status_dict['Threads_running'])
+        self.questions = _int_me(status_dict['Questions'])
+        self.slow_queries = _int_me(status_dict['Slow_queries'])
+        self.open_files = _int_me(status_dict['Open_files'])
+        self.open_tables = _int_me(status_dict['Open_tables'])
 
 
 class _MysqlSlaveStatus():
@@ -30,7 +36,7 @@ class _MysqlSlaveStatus():
             query_results = c.fetchone()
 
         if query_results:
-            self.seconds_behind_master = query_results['Seconds_Behind_Master']
+            self.seconds_behind_master = _int_me(query_results['Seconds_Behind_Master'])
             self.slave_io_running = query_results['Slave_IO_Running'] == 'Yes'
             self.slave_sql_running = query_results['Slave_SQL_Running'] == 'Yes'
         else:

@@ -27,6 +27,9 @@ from cwmon_mysql.metrics import SlowQueriesMetric
 from cwmon_mysql.metrics import UptimeMetric
 
 
+# FIXME: Figure out how to send a boolean value in the least hacky way.
+
+
 @click.group()
 @click.option('--host', default='127.0.0.1',
               envvar='MYSQL_HOST',
