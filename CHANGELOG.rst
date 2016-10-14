@@ -1,8 +1,32 @@
 Changelog
 =========
 
+0.2.2 (2016-10-14)
+------------------
+
+Changes
+~~~~~~~
+
+- Update changelog. [Hank Gay]
+
+Fix
+~~~
+
+- Send booleans as 1 (True) or 0 (False). [Hank Gay]
+
+- Use integers for metric values where appropriate. [Hank Gay]
+
+Other
+~~~~~
+
+- Bump version: 0.2.1 → 0.2.2. [Hank Gay]
+
 0.2.1 (2016-10-13)
 ------------------
+
+- Merge branch 'release/0.2.1' [Hank Gay]
+
+- Update changelog. [Hank Gay]
 
 - Bump version: 0.2.0 → 0.2.1. [Hank Gay]
 
