@@ -27,7 +27,7 @@ from cwmon_mysql.metrics import SlowQueriesMetric
 from cwmon_mysql.metrics import UptimeMetric
 
 
-@click.group()
+@click.group(chain=True)
 @click.option('--host', default='127.0.0.1',
               envvar='MYSQL_HOST',
               help='The hostname where we can reach the DB.')
