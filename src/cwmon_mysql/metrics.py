@@ -69,7 +69,7 @@ class DeadlocksMetric(Metric):
             c.execute("SHOW GLOBAL STATUS LIKE 'innodb_deadlocks'")
             result = c.fetchone()
         if result is not None:
-            self.value = result['Value']
+            self.value = _int_me(result['Value'])
         else:
             self.value = 0
         self.unit = 'Innodb deadlocks'
