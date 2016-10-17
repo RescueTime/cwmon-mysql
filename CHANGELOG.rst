@@ -1,6 +1,37 @@
 Changelog
 =========
 
+0.3.0 (2016-10-17)
+------------------
+
+New
+~~~
+
+- Provide actual usage sample. [Hank Gay]
+
+- Allow command chaining. [Hank Gay]
+
+Changes
+~~~~~~~
+
+- Send booleans as 1 (True) or 0 (False). [Hank Gay]
+
+Fix
+~~~
+
+- Send 0 instead of None for metrics values. [Hank Gay]
+
+Other
+~~~~~
+
+- Bump version: 0.2.2 → 0.3.0. [Hank Gay]
+
+- Merge branch 'release/0.2.2' into develop. [Hank Gay]
+
+- Use integers for metric values where appropriate. [Hank Gay]
+
+- Merge branch 'release/0.2.1' into develop. [Hank Gay]
+
 0.2.2 (2016-10-14)
 ------------------
 
@@ -18,6 +49,8 @@ Fix
 
 Other
 ~~~~~
+
+- Merge branch 'release/0.2.2' [Hank Gay]
 
 - Bump version: 0.2.1 → 0.2.2. [Hank Gay]
 
