@@ -40,7 +40,7 @@ class _MysqlSlaveStatus():
             self.slave_io_running = _int_me(query_results['Slave_IO_Running'] == 'Yes')
             self.slave_sql_running = _int_me(query_results['Slave_SQL_Running'] == 'Yes')
         else:
-            self.seconds_behind_master = None
+            self.seconds_behind_master = 0
             self.slave_io_running = 0
             self.slave_sql_running = 0
 
