@@ -1,6 +1,34 @@
 Changelog
 =========
 
+0.4.0 (2016-10-17)
+------------------
+
+Changes
+~~~~~~~
+
+- Bump version requirement for cwmon. [Hank Gay]
+
+Fix
+~~~
+
+- Send 0 instead of None. [Hank Gay]
+
+- Send 0 instead of '0' when no deadlocks detected. [Hank Gay]
+
+Other
+~~~~~
+
+- Bump version: 0.3.0 → 0.4.0. [Hank Gay]
+
+- Merge branch 'release/0.3.0' into develop. [Hank Gay]
+
+- Provide actual usage sample. [Hank Gay]
+
+- Allow command chaining. [Hank Gay]
+
+- Send 0 instead of None for metrics values. [Hank Gay]
+
 0.3.0 (2016-10-17)
 ------------------
 
@@ -14,6 +42,8 @@ New
 Changes
 ~~~~~~~
 
+- Update changelog. [Hank Gay]
+
 - Send booleans as 1 (True) or 0 (False). [Hank Gay]
 
 Fix
@@ -23,6 +53,8 @@ Fix
 
 Other
 ~~~~~
+
+- Merge branch 'release/0.3.0' [Hank Gay]
 
 - Bump version: 0.2.2 → 0.3.0. [Hank Gay]
 
@@ -159,5 +191,3 @@ Other
   [Hank Gay]
 
 - Initial project skeleton. [Hank Gay]
-
-
