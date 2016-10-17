@@ -5,7 +5,7 @@ from cwmon.metrics import Metric
 
 def _int_me(to_int):
     if to_int is None:
-        return None
+        return 0
     return int(to_int)
 
 
@@ -71,7 +71,7 @@ class DeadlocksMetric(Metric):
         if result is not None:
             self.value = result['Value']
         else:
-            self.value = None
+            self.value = 0
         self.unit = 'Innodb deadlocks'
 
 
