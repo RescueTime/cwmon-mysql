@@ -23,7 +23,7 @@ def read(*names, **kwargs):
 
 setup(
     name='cwmon-mysql',
-    version='0.4.0',
+    version='0.5.0',
     license='BSD',
     description='A cwmon plugin for monitoring MySQL.',
     long_description='%s\n%s' % (
@@ -40,8 +40,8 @@ setup(
     zip_safe=False,
     classifiers=[
         # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'Development Status :: 5 - Production/Stable',
-        'Intended Audience :: Developers',
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: System Administrators',
         'License :: OSI Approved :: BSD License',
         'Operating System :: Unix',
         'Operating System :: POSIX',
@@ -62,7 +62,7 @@ setup(
     ],
     install_requires=[
         'click',
-        'cwmon >= 0.3.0',
+        'cwmon >= 0.5.0',
         'pymysql',
     ],
     extras_require={
