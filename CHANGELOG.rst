@@ -1,11 +1,28 @@
 Changelog
 =========
 
+0.5.0 (2016-10-18)
+------------------
+
+Changes
+~~~~~~~
+
+- Update version of cwmon dependency. [Hank Gay]
+
+Other
+~~~~~
+
+- Bump version: 0.4.0 → 0.5.0. [Hank Gay]
+
+- Merge branch 'release/0.4.0' into develop. [Hank Gay]
+
 0.4.0 (2016-10-17)
 ------------------
 
 Changes
 ~~~~~~~
+
+- Update changelog. [Hank Gay]
 
 - Bump version requirement for cwmon. [Hank Gay]
 
@@ -191,3 +208,5 @@ Other
   [Hank Gay]
 
 - Initial project skeleton. [Hank Gay]
+
+
